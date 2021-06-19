@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    
     <title>Customer Form</title>
 </head>
-<body>   
+<body>  
+    <nav class="navbar" style=" background-color: #d4d3d3 ;>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">My Company</a>
+          </div> 
+            <ul class="nav mr-auto">
+                <li class="nav-item"><a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a></li>
+                
+                <li class="nav-item ml-4"><a class="btn btn-sm btn-transparent" href="/view">View</a></li>
+              </ul>
+          </div>
+          
+        </div>
+    </nav>
     <div class="container">   
         <header class="py-2 border-bottom d-flex align-items-center">
             <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
@@ -16,10 +35,11 @@
             
         </header>
     </div>
+    
     <div class="container">
     <h3 class="text-center mt-4"> Customer Form</h2>
     <div class="table-responsive">
-        <table class=" styled-table table-striped table-hover "> 
+        <table class=" styled-table table-striped table-hover " id="view"> 
             <thead>
             <tr class=""> 
             <th colspan="2" class="text-center">Action</th>
@@ -153,18 +173,17 @@
             <td>{{ $forms->finance_problem}}</td> 
             <td>{{ $forms->Buying_scheduled_later}}</td> 
             <td>{{ $forms->false_enquiry}}</td> 
-           
-           
-          
-            </tr>
-            
-            
+            </tr>    
             @endforeach
         </tbody> 
         </table>
         
     </div>
     </div>
-   
+    <script>
+        $(document).ready( function () {
+            $('#view').DataTable();
+        } );
+    </script> 
 </body>
 </html>

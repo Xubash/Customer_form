@@ -20,14 +20,17 @@
     <body>
         <form action ='/{{  $form->id }}/update'  method="POST">
         @csrf  
-        {{-- @method('PUT')          --}}
+    
        
         <div class="container">   
             <header class="py-2 border-bottom d-flex align-items-center">
                 <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
-                <h3>Company Name</h3>
-                
+                <h3>Company Name</h3> 
+                             
             </header>
+            <div class="text-right">
+                <a class="add-field btn  btn-warning " href="/view"> Back </a>  
+            </div>
         </div>
         <div class="container mt-2">
             <div class="d-flex mt-4">
@@ -152,9 +155,10 @@
                 </div>
                 <div class="form-check form-check-inline col-2">
                     <input class="form-check-input drop-right" type="checkbox" name="source_of_enquiry[]" 
-                    onclick = "specify_check_soe()" id="events_soe"
+                    {{-- onselect = "specify_check_soe()"  --}}
+                    id="events_soe"
                     @if(in_array("Events", unserialize($form->source_of_enquiry))) checked="checked" @endif 
-                    @if(in_array("Events", unserialize($form->source_of_enquiry))) specify_check_soe() @endif 
+                   
                     value="Events">
                     <label class="form-check-label " for="inlineCheckbox4">Events(specify)</label>
                 </div>                   
@@ -178,9 +182,9 @@
                 </div>
                 <div class="form-check form-check-inline col-2">
                     <input class="form-check-input" type="checkbox"
-                     name="source_of_enquiry[]" id="others_soe"  onchange = "specify_check_soe()"
-                    @if(in_array("Others", unserialize($form->source_of_enquiry))) checked="checked" @endif 
-                    {{-- @if(in_array("Others", unserialize($form->source_of_enquiry))) specify_check_soe() @endif  --}}
+                     name="source_of_enquiry[]" id="others_soe"
+                    @if(in_array("Others", unserialize($form->source_of_enquiry))) checked="checked"  @endif 
+                    @if(in_array("Others", unserialize($form->source_of_enquiry))){specify_check_soe()}@endif 
                     value="Others" >
                     <label class="form-check-label" for="inlineCheckbox8">Others(specify)</label>
                 </div>

@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -14,6 +16,21 @@
 
 
 <body>
+    <nav class="navbar" style=" background-color: #d4d3d3 ;>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">My Company</a>
+          </div> 
+            <ul class="nav mr-auto">
+                <li class="nav-item"><a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a></li>
+                
+                <li class="nav-item ml-4"><a class="btn btn-sm btn-transparent" href="/view">View</a></li>
+              </ul>
+          </div>
+          
+        </div>
+    </nav>
+    
         <form action ='/' method="POST">
             @csrf  
         <div class="container">   

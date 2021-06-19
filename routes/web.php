@@ -15,13 +15,9 @@ use App\Http\Controllers\FormController;
 */
 
 Route::resource('/',FormController::class);
-
 Route::GET('/view',  [FormController::class,'view']);
-
 Route::GET('/{id}/edit',  [FormController::class,'edit']);
 Route::POST('/{id}/update',  [FormController::class,'update']);
-
-
 Route::GET('/{id}/print',  [FormController::class,'print']);
 
 
