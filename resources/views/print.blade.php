@@ -24,12 +24,12 @@
             <div class=" pt-3">
                 <ul class="nav">
 
-                    <li class="nav-item">
-                        <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
+                    <li class="nav-item ">
+                        <a class="btn btn-md btn-outline-info pr-5 pl-5" style="widht:500px;" href="/">Form</a>
                     </li>
                     
-                    <li class="nav-item ml-4">
-                        <a class="btn btn-md btn-outline-info" href="/view">View</a>
+                    <li class="nav-item ml-2">
+                        <a class="btn btn-md btn-outline-info pr-5 pl-5" href="/view">View</a>
                     </li>
                 </ul>
             </div>
