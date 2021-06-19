@@ -203,7 +203,12 @@
             <div class=" form-check form-check-inline hideStatus"id = "specify">             
                 <input type="text" placeholder ="Please specify here" class="form-control ml-2 mt-2 " 
                 id="specify_text" name="soe_specify_text" value="{{ $form->soe_specify }}" style="width: 400px;">
-            </div>           
+            </div> 
+            
+            <div>
+                <label class="form-check-label" for="inlineCheckbox8">Referral(Name)</label>
+                <input type="text" class="form-control col-md-3" name="referral" value="{{ $form->referral }}">
+            </div>
             <br>
            
 
@@ -435,7 +440,7 @@
                             if(!empty($fw)){
                                 for($i=0; $i < count($fw); $i++){
                                     echo'<div class="multi-field">
-                                        <input type="date" class="col-md-2 mb-2" value="'.$fw[$i].'" placeholder="Date" name="date[]">
+                                        <input type="date" class="col-md-2 mb-2" value="'.$fw[$i].'" placeholder="Date" name="followup_date[]">
                                         <input type="text" class="col-md-7 mb-2" value="'.$voc[$i].'" placeholder="Voice of Customer" 
                                             name="voice_of_customer[]">
                                         <input type="date" class="col-md-2 mb-2" value="'.$nxd[$i].'" placeholder="Next Contact Date"

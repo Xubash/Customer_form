@@ -81,7 +81,7 @@
                 <td rowspan="2">Event (Specify): @if(in_array("Event", unserialize($form->source_of_enquiry))) &#9745; @endif </td>  
                 <td>Visit @if(in_array("Visit", unserialize($form->source_of_enquiry))) &#9745; @endif</td>  
                 <td>Telephone calls @if(in_array("Telephone calls", unserialize($form->source_of_enquiry))) &#9745; @endif </td>  
-                <td rowspan="2">Referral (Name)</td>  
+                <td rowspan="2">Referral (Name) : {{ $form->referral }}</td>  
               
             </tr>
 
@@ -184,17 +184,31 @@
                 <td>Next Contact Date</td>    
             </tr>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td colspan="4" class="text-center">&nbsp;</td>
-                <td>&nbsp;</td>    
-            </tr>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td colspan="4" class="text-center">&nbsp;</td>
-                <td>&nbsp;</td>    
-            </tr>
+
+            @php
+                $fw = unserialize($form->followup_date);
+                $voc = unserialize($form->voice_of_customer);
+                $nxd = unserialize($form->next_contact_date);
+
+                if(!empty($fw)){
+                    for($i=0; $i < count($fw); $i++){
+                        echo '<tr>
+                                <td>'.$fw[$i].'</td>
+                                <td colspan="4" class="text-center">'.$voc[$i].'</td>
+                                <td>'.$nxd[$i].'</td>    
+                            </tr>';
+
+                    }
+                }
+                else{
+                    echo'<tr>
+                            <td>N/A</td>
+                            <td colspan="4" class="text-center">N/A</td>
+                            <td>N/A</td>    
+                        </tr>';
+                }
+            @endphp
 
             <tr>
                 <td class="font-weight-bold">Nature of Visit</td>
@@ -212,18 +226,11 @@
                 <td colspan="2">&nbsp;</td>            
             </tr>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
+           
             
             @if( $form->status=="Closed" ) 
             <tr>
-                <td colspan="6" class="text-center">Lost Case Analysis (Detail)</td> 
+                <td colspan="6" class="text-center font-weight-bold">Lost Case Analysis (Detail)</td> 
             </tr>
 
             <tr>

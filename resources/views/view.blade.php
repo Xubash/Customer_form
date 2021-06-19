@@ -36,7 +36,7 @@
     <div class="container">
     <h3 class="text-center mt-4"> Customer Details</h2>
     <div class="table-responsive">
-        <table class=" styled-table table-striped table-hover " id="view"> 
+        <table class=" styled-table table-striped table-hover " id="datatable_view"> 
             <thead>
             <tr class=""> 
             <th colspan="2" class="text-center">Action</th>
@@ -55,6 +55,7 @@
             <th>Email ID</th>
             <th>SOURCE_OF_ENQUIRY </th>
             <th>SOE_SPECIFY</th>
+            <th>REFERRAL</th>
             <th>INTRESTED_MODEL</th>
             <th>OPTION</th>
             <th>FINALIZED_OPTION</th>
@@ -76,9 +77,9 @@
             <th>FINANCE_PROBLEM</th>
             <th>BUYING_SCHEDULED_LATER</th>
             <th>FALSE_ENQUIRY</th>
-            <th>followup_date</th>
-            <th>voice_of_customer</th>
-            <th>next_contact_date</th>
+            <th>FOLLOWUP_DATE</th>
+            <th>VOICE_OF_CUSTOMER</th>
+            <th>NEXT_CONTACT_DATE</th>
             </tr>
         </thead>
         <tbody>
@@ -117,6 +118,7 @@
             @endif          
             
             <td>{{ $forms->soe_specify}}</td> 
+            <td>{{ $forms->referral}}</td> 
             <td>{{ $forms->intrested_model}}</td> 
             <td>{{ $forms->option}}</td> 
             <td>{{ $forms->finalized_option}}</td> 
@@ -228,7 +230,7 @@
     </div>
     <script>
         $(document).ready( function () {
-            $('#view').DataTable();
+            $('#datatable_view').DataTable();
         } );
     </script> 
 </body>

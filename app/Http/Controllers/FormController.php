@@ -136,6 +136,7 @@ class FormController extends Controller
             'finance_problem'=>$request->input('finance_problem'),
             'Buying_scheduled_later'=>$request->input('Buying_scheduled_later'),
             'false_enquiry'=>$request->input('false_enquiry'),
+            'referral'=>$request->input('referral'),
         ]);
 
          return redirect('view');
@@ -210,7 +211,24 @@ class FormController extends Controller
                 else{
                     $product=$request->input('product');
                 }
+            
+            if($request->input('followup_date')!=null){
+                $followup_date = serialize($request->input('followup_date'));
+            }else{
+                $followup_date = $request->input('followup_date');
+            }
+            if($request->input('voice_of_customer')!=null){
+                $voice_of_customer = serialize($request->input('voice_of_customer'));
+            }else{
+                $voice_of_customer = $request->input('voice_of_customer');
+            }
+            if($request->input('next_contact_date')!=null){
+                $next_contact_date = serialize($request->input('next_contact_date'));
+            }else{  
+                $next_contact_date = $request->input('next_contact_date');
+            }
 
+            // dd($followup_date .$voice_of_customer . $next_contact_date );
         $form = Form::where('id',$id)
         ->update( [
             'ref_no'=>$request->input('ref_no'),
@@ -243,13 +261,15 @@ class FormController extends Controller
             'expected_price'=>$request->input('expected_price'),
             'nature_of_visit'=>$request->input('nature_of_visit'),
             'status'=>$request->input('status'),
-
-
+            'followup_date'=>$followup_date,
+            'voice_of_customer'=>$voice_of_customer,
+            'next_contact_date'=>$next_contact_date,
             'lost_to_competitor_brand'=>$request->input('lost_to_competitor_brand'),
             'lost_to_codealer'=>$request->input('lost_to_codealer'),
             'finance_problem'=>$request->input('finance_problem'),
             'Buying_scheduled_later'=>$request->input('Buying_scheduled_later'),
             'false_enquiry'=>$request->input('false_enquiry'),
+            'referral'=>$request->input('referral')
         ]);
 
         return redirect('view');

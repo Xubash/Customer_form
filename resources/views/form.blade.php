@@ -8,7 +8,6 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -16,24 +15,7 @@
 
 
 <body>
-    {{-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px ></a>
-          </div> 
-            <ul class="nav mr-auto">
-                <li class="nav-item">
-                    <a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a>
-                </li>
-
-                <li class="nav-item ml-4">
-                    <a class="btn btn-sm btn-transparent" href="/view">View</a>
-                </li>
-              </ul>
-          </div>
-          
-        </div>
-    </nav> --}}
+   
     <div class="container">   
         <header class="py-2 border-bottom d-flex align-items-center">
             <div class="mr-4">
@@ -195,11 +177,17 @@
                 </div>
                 
             </div> 
-            
             <div class=" form-check form-check-inline hideStatus"id = "specify">             
                 <input type="text" placeholder ="Please specify here" class="form-control ml-2 mt-2 " 
                 id="specify_text" name="soe_specify_text" style="width: 400px;">
-            </div>           
+            </div>
+            
+            <div>
+                <label class="form-check-label" for="inlineCheckbox8">Referral(Name)</label>
+                <input type="text" class="form-control col-md-3" name="referral">
+            </div>
+            
+                      
             <br>
            
 
