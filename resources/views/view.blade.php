@@ -14,20 +14,6 @@
     <title>Customer Form</title>
 </head>
 <body>  
-    {{-- <nav class="navbar" style=" background-color: #d4d3d3 ;>
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">My Company</a>
-          </div> 
-            <ul class="nav mr-auto">
-                <li class="nav-item"><a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a></li>
-                
-                <li class="nav-item ml-4"><a class="btn btn-sm btn-transparent" href="/view">View</a></li>
-              </ul>
-          </div>
-          
-        </div>
-    </nav> --}}
     <div class="container">   
         <header class="py-2 border-bottom d-flex align-items-center">
             <div class="mr-4">
@@ -90,7 +76,9 @@
             <th>FINANCE_PROBLEM</th>
             <th>BUYING_SCHEDULED_LATER</th>
             <th>FALSE_ENQUIRY</th>
-
+            <th>followup_date</th>
+            <th>voice_of_customer</th>
+            <th>next_contact_date</th>
             </tr>
         </thead>
         <tbody>
@@ -111,7 +99,6 @@
             <td>{{ $forms->contact_no }}</td> 
             <td>{{ $forms->occupation }}</td>
             <td>{{ $forms->email }}</td> 
-            
             
             @if (!is_null($forms->source_of_enquiry)&& $forms->source_of_enquiry!='')
             @php
@@ -184,6 +171,54 @@
             <td>{{ $forms->finance_problem}}</td> 
             <td>{{ $forms->Buying_scheduled_later}}</td> 
             <td>{{ $forms->false_enquiry}}</td> 
+
+            @if (!is_null($forms->followup_date)&& $forms->followup_date!='')
+            @php
+               
+               $followup_date=unserialize($forms->followup_date) ;            
+            @endphp
+            <td>
+                <ol>
+                    @foreach ($followup_date as $a)
+                        <li>
+                            {{ $a }}
+                        </li>                        
+                    @endforeach
+                </ol>
+            </td>   
+            @endif 
+
+            @if (!is_null($forms->voice_of_customer)&& $forms->voice_of_customer!='')
+            @php
+               
+               $voice_of_customer=unserialize($forms->voice_of_customer) ;            
+            @endphp
+            <td>
+                <ol>
+                    @foreach ($voice_of_customer as $a)
+                        <li>
+                            {{ $a }}
+                        </li>                        
+                    @endforeach
+                </ol>
+            </td>   
+            @endif 
+
+            @if (!is_null($forms->next_contact_date)&& $forms->next_contact_date!='')
+            @php
+               
+               $next_contact_date=unserialize($forms->next_contact_date) ;            
+            @endphp
+            <td>
+                <ol>
+                    @foreach ($next_contact_date as $a)
+                        <li>
+                            {{ $a }}
+                        </li>                        
+                    @endforeach
+                </ol>
+            </td>   
+            @endif 
             </tr>    
             @endforeach
         </tbody> 

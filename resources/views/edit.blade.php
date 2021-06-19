@@ -426,14 +426,35 @@
             <form role="form" action="/wohoo" method="POST">
                 <div class="multi-field-wrapper">
                     <div class="multi-fields">
-                        <div class="multi-field">
-                            <input type="date" class="col-md-2 mb-2" placeholder="Date" name="date[]">
-                            <input type="text" class="col-md-7 mb-2" placeholder="Voice of Customer" 
-                                name="voice_of_customer[]">
-                            <input type="date" class="col-md-2 mb-2" placeholder="Next Contact Date"
-                                name="next_contact_date[]">
-                            <button type="button" class="remove-field btn btn-danger btn-sm">Remove</button>
-                        </div>
+
+                        @php
+                            $fw = unserialize($form->followup_date);
+                            $voc = unserialize($form->voice_of_customer);
+                            $nxd = unserialize($form->next_contact_date);
+
+                            if(!empty($fw)){
+                                for($i=0; $i < count($fw); $i++){
+                                    echo'<div class="multi-field">
+                                        <input type="date" class="col-md-2 mb-2" value="'.$fw[$i].'" placeholder="Date" name="date[]">
+                                        <input type="text" class="col-md-7 mb-2" value="'.$voc[$i].'" placeholder="Voice of Customer" 
+                                            name="voice_of_customer[]">
+                                        <input type="date" class="col-md-2 mb-2" value="'.$nxd[$i].'" placeholder="Next Contact Date"
+                                            name="next_contact_date[]">
+                                        <button type="button" class="remove-field btn btn-danger btn-sm">Remove</button>
+                                    </div>';
+                                }
+                            }
+                            else{
+                                echo'<div class="multi-field">
+                                        <input type="date" class="col-md-2 mb-2" placeholder="Date" name="date[]">
+                                        <input type="text" class="col-md-7 mb-2" placeholder="Voice of Customer" 
+                                            name="voice_of_customer[]">
+                                        <input type="date" class="col-md-2 mb-2" placeholder="Next Contact Date"
+                                            name="next_contact_date[]">
+                                        <button type="button" class="remove-field btn btn-danger btn-sm">Remove</button>
+                                    </div>';
+                            }
+                        @endphp
                     </div>
                     <button type="button" class="add-field btn btn-success">Add</button>
                 </div>

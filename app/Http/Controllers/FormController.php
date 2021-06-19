@@ -60,7 +60,6 @@ class FormController extends Controller
     public function store(Request $request)
     {   
         //  dd($request->input('status'));
-        
 
         if($request->input('source_of_enquiry')!=null){
         $soe=serialize($request->input('source_of_enquiry'));}
@@ -69,19 +68,35 @@ class FormController extends Controller
         }
 
         if($request->input('showroom')!=null){
-            $showroom=serialize($request->input('showroom'));}
-            else{
-                $showroom=$request->input('showroom');
-            }
+            $showroom=serialize($request->input('showroom'));
+        }else{
+            $showroom=$request->input('showroom');
+        }
 
         if($request->input('product')!=null){
-            $product=serialize($request->input('product'));}
-            else{
-                $product=$request->input('product');
-            }
+            $product=serialize($request->input('product'));
+        }else{
+            $product=$request->input('product');
+        }
 
+        if($request->input('followup_date')!=null){
+            $followup_date = serialize($request->input('followup_date'));
+        }else{
+            $followup_date = $request->input('followup_date');
+        }
+        if($request->input('voice_of_customer')!=null){
+            $voice_of_customer = serialize($request->input('voice_of_customer'));
+        }else{
+            $voice_of_customer = $request->input('voice_of_customer');
+        }
+        if($request->input('next_contact_date')!=null){
+            $next_contact_date = serialize($request->input('next_contact_date'));
+        }else{  
+            $next_contact_date = $request->input('next_contact_date');
+        }
 
-        // dd($soe);
+        // dd($followup_date.$voice_of_customer.$next_contact_date);
+        
         $form =form::create([
             'ref_no'=>$request->input('ref_no'),
             'date'=>$request->input('form_date'),
@@ -113,8 +128,9 @@ class FormController extends Controller
             'expected_price'=>$request->input('expected_price'),
             'nature_of_visit'=>$request->input('nature_of_visit'),
             'status'=>$request->input('status'),
-
-
+            'followup_date'=>$followup_date,
+            'voice_of_customer'=>$voice_of_customer,
+            'next_contact_date'=>$next_contact_date,
             'lost_to_competitor_brand'=>$request->input('lost_to_competitor_brand'),
             'lost_to_codealer'=>$request->input('lost_to_codealer'),
             'finance_problem'=>$request->input('finance_problem'),

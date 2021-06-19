@@ -14,14 +14,14 @@
             function(){
                 if ($(this).is(':checked') ) {
                     if($(this).val() == 'Closed'){
-                document.getElementById("status_extra").classList.remove('hideStatus');
-                document.getElementById("status_extra").classList.add('showStatus');}
-                else {
-                    document.getElementById("status_extra").className = "hideStatus"; 
-                }     
+                        document.getElementById("status_extra").classList.remove('hideStatus');
+                        document.getElementById("status_extra").classList.add('showStatus');
+                    }
+                    else {
+                        document.getElementById("status_extra").className = "hideStatus"; 
+                    }     
                 }
-            }
-            
+            }   
         );
 
 

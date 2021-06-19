@@ -388,12 +388,10 @@
             <div class="py-5 text-center">
                 <h4>Follow up Details</h4>
             </div>
-
-            <form role="form" action="/wohoo" method="POST">
                 <div class="multi-field-wrapper">
                     <div class="multi-fields">
                         <div class="multi-field">
-                            <input type="date" class="col-md-2 mb-2" placeholder="Date" name="date[]">
+                            <input type="date" class="col-md-2 mb-2" placeholder="Date" name="followup_date[]">
                             <input type="text" class="col-md-7 mb-2" placeholder="Voice of Customer" 
                                 name="voice_of_customer[]">
                             <input type="date" class="col-md-2 mb-2" placeholder="Next Contact Date"
@@ -403,7 +401,7 @@
                     </div>
                     <button type="button" class="add-field btn btn-success">Add</button>
                 </div>
-            </form><br>
+                <br>
 
 
 
