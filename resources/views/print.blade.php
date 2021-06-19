@@ -14,12 +14,16 @@
 
 <body>
     <div class="container">   
-        <header class="py-2 border-bottom d-flex align-items-center">
+        <header class="py-2 border-bottom d-flex justify-content-between">
             <div class="mr-4">
                 <img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px >
             </div>
-            <div class="ml-4">
+            <div>
+                <h3 class="text-center pt-3"> My Company </h3>
+            </div>
+            <div class=" pt-3">
                 <ul class="nav">
+
                     <li class="nav-item">
                         <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
                     </li>
@@ -81,7 +85,7 @@
                 <td rowspan="2">Event (Specify): @if(in_array("Event", unserialize($form->source_of_enquiry))) &#9745; @endif </td>  
                 <td>Visit @if(in_array("Visit", unserialize($form->source_of_enquiry))) &#9745; @endif</td>  
                 <td>Telephone calls @if(in_array("Telephone calls", unserialize($form->source_of_enquiry))) &#9745; @endif </td>  
-                <td rowspan="2">Referral (Name) : {{ $form->referral }}</td>  
+                <td rowspan="2" class="text-center">Referral :<br> {{ $form->referral }}</td>  
               
             </tr>
 
