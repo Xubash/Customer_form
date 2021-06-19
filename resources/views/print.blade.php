@@ -15,9 +15,20 @@
 <body>
     <div class="container">   
         <header class="py-2 border-bottom d-flex align-items-center">
-            <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
-            <h3>Company Name</h3>
-            
+            <div class="mr-4">
+                <img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px >
+            </div>
+            <div class="ml-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
+                    </li>
+                    
+                    <li class="nav-item ml-4">
+                        <a class="btn btn-md btn-outline-info" href="/view">View</a>
+                    </li>
+                </ul>
+            </div>
         </header>
     </div>
 

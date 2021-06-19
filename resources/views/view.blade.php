@@ -14,7 +14,7 @@
     <title>Customer Form</title>
 </head>
 <body>  
-    <nav class="navbar" style=" background-color: #d4d3d3 ;>
+    {{-- <nav class="navbar" style=" background-color: #d4d3d3 ;>
         <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="/">My Company</a>
@@ -27,17 +27,28 @@
           </div>
           
         </div>
-    </nav>
+    </nav> --}}
     <div class="container">   
         <header class="py-2 border-bottom d-flex align-items-center">
-            <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
-            <h3>Company Name</h3>
-            
+            <div class="mr-4">
+                <img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px >
+            </div>
+            <div class="ml-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
+                    </li>
+                    
+                    <li class="nav-item ml-4">
+                        <a class="btn btn-md btn-outline-info" href="/view">View</a>
+                    </li>
+                </ul>
+            </div>
         </header>
     </div>
     
     <div class="container">
-    <h3 class="text-center mt-4"> Customer Form</h2>
+    <h3 class="text-center mt-4"> Customer Details</h2>
     <div class="table-responsive">
         <table class=" styled-table table-striped table-hover " id="view"> 
             <thead>

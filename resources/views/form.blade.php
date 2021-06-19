@@ -16,30 +16,45 @@
 
 
 <body>
-    <nav class="navbar" style=" background-color: #d4d3d3 ;>
+    {{-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">My Company</a>
+            <a class="navbar-brand" href="/"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px ></a>
           </div> 
             <ul class="nav mr-auto">
-                <li class="nav-item"><a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a></li>
-                
-                <li class="nav-item ml-4"><a class="btn btn-sm btn-transparent" href="/view">View</a></li>
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-transparent" style="widht:500px;" href="/">Form</a>
+                </li>
+
+                <li class="nav-item ml-4">
+                    <a class="btn btn-sm btn-transparent" href="/view">View</a>
+                </li>
               </ul>
           </div>
           
         </div>
-    </nav>
+    </nav> --}}
+    <div class="container">   
+        <header class="py-2 border-bottom d-flex align-items-center">
+            <div class="mr-4">
+                <img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px >
+            </div>
+            <div class="ml-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
+                    </li>
+                    
+                    <li class="nav-item ml-4">
+                        <a class="btn btn-md btn-outline-info" href="/view">View</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
     
         <form action ='/' method="POST">
             @csrf  
-        <div class="container">   
-            <header class="py-2 border-bottom d-flex align-items-center">
-                <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
-                <h3>Company Name</h3>
-                
-            </header>
-        </div>
         <div class="container mt-2">
             <div class="d-flex mt-4">
                 <div class="col-8 ">

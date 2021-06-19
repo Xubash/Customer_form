@@ -16,26 +16,35 @@
 
 
 <body>
-
-    <body>
+    <div class="container">   
+        <header class="py-2 border-bottom d-flex align-items-center">
+            <div class="mr-4">
+                <img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px >
+            </div>
+            <div class="ml-4">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="btn btn-md btn-outline-info" style="widht:500px;" href="/">Form</a>
+                    </li>
+                    
+                    <li class="nav-item ml-2">
+                        <a class="btn btn-md btn-outline-info" href="/view">View</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    
         <form action ='/{{  $form->id }}/update'  method="POST">
         @csrf  
-    
-       
-        <div class="container">   
-            <header class="py-2 border-bottom d-flex align-items-center">
-                <div class=" mr-4"><img src= "{{ asset('images/MentorLogo.png')}}" width = 120px height =60px > </div>
-                <h3>Company Name</h3> 
-                             
-            </header>
-            <div class="text-right">
-                <a class="add-field btn  btn-warning " href="/view"> Back </a>  
-            </div>
-        </div>
+
         <div class="container mt-2">
             <div class="d-flex mt-4">
-                <div class="col-8 ">
-                    <h4 class="text-right mr-4">Customer Information</h4>
+                <div class="col-2">
+                    <a class="add-field btn  btn-warning " href="/view"> Back </a>  
+                </div>
+                <div class="col-6 text-center">
+                    <h4 class="pt-1 ml-4">Customer Information</h4>
                 </div>
                 <div class="d-flex justify-content-end col-4 ">
                     <div>
